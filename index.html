@@ -30,56 +30,46 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 25px;
+  padding: 20px;
 }
 
-/* LOGO */
 .logo {
   width: 120px;
-  margin-bottom: 20px;
-}
-
-/* TÍTULO PRO */
-h1 {
-  font-size: clamp(35px, 8vw, 70px);
-  letter-spacing: 5px;
-  margin-bottom: 20px;
-
-  background: linear-gradient(90deg, #6a00ff, #ff00c8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* BOTONES */
 .botones {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .btn {
-  padding: 12px 25px;
+  padding: 14px 30px;
   border-radius: 30px;
   background: linear-gradient(90deg, #6a00ff, #ff00c8);
   color: white;
   text-decoration: none;
   transition: 0.3s;
   font-weight: 600;
-  box-shadow: 0 0 10px rgba(255, 0, 200, 0.5);
+  box-shadow: 0 0 15px rgba(255, 0, 200, 0.6);
 }
 
 .btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 0, 200, 0.8);
+  box-shadow: 0 0 25px rgba(255, 0, 200, 0.9);
 }
 
 /* SECCIONES */
 section {
   min-height: 100vh;
-  padding: 80px 20px;
+  padding: 120px 25px; /* 🔥 MÁS ESPACIO */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 25px;
 }
 
 #contacto { background: #0f0f0f; }
@@ -88,17 +78,18 @@ section {
 
 /* TEXTO */
 section p {
-  max-width: 600px;
-  margin: 0 auto 20px;
-  line-height: 1.6;
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 16px;
 }
 
 /* BOTÓN VOLVER */
 .volver {
-  margin-top: 30px;
+  margin-top: 40px;
   display: inline-block;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 12px 25px;
+  border-radius: 25px;
   background: linear-gradient(90deg, #6a00ff, #ff00c8);
   color: white;
   text-decoration: none;
@@ -108,21 +99,24 @@ section p {
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 30px;
+  gap: 20px;
+  margin-top: 40px;
 }
 
-.galeria img {
+/* 🔥 IMÁGENES OPTIMIZADAS */
+.img-responsive {
   width: 100%;
+  height: 260px;
+  object-fit: cover;
   border-radius: 15px;
   transition: 0.3s;
 }
 
-.galeria img:hover {
+.img-responsive:hover {
   transform: scale(1.05);
 }
 
-/* 📱 RESPONSIVE */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
   .botones {
     flex-direction: column;
@@ -131,6 +125,10 @@ section p {
   .btn {
     width: 80%;
     max-width: 300px;
+  }
+
+  .img-responsive {
+    height: 200px;
   }
 }
 </style>
@@ -141,52 +139,43 @@ section p {
 <!-- 🔥 INICIO -->
 <div class="hero" id="inicio">
 
-  <!-- ⚠️ CAMBIA "logo.png" POR EL NOMBRE DE TU IMAGEN -->
   <img src="LOGO MEGA.png" alt="LOGO MEGA" class="LOGO MEGA">
 
-  <h1>GRUPO MEGA 3D</h1>
-  
   <div class="botones">
     <a href="#contacto" class="btn">Contacto</a>
-    <a href="#quienes" class="btn">Quiénes Somos</a>
+    <a href="#quienes" class="btn">Quiénes</a>
     <a href="#trabajos" class="btn">Trabajos</a>
   </div>
 </div>
 
 <!-- CONTACTO -->
 <section id="contacto">
-  <h1>Contacto</h1>
   <p>Correo: contacto@mega3d.com</p>
-  <p>Tel: +52 56 1929 5261</p>
+  <p>Tel: +52 123 456 7890</p>
 
-  <a href="#inicio" class="volver">⬅ Volver al inicio</a>
+  <a href="#inicio" class="volver">⬅ Volver</a>
 </section>
 
-<!-- QUIENES SOMOS -->
+<!-- QUIENES -->
 <section id="quienes">
-  <h1>Quiénes Somos</h1>
-
   <p>
     Diseñamos, fabricamos e instalamos letreros luminosos 3D,
     fachadas de aluminio compuesto, neón flex y LED inteligente.
   </p>
 
-  <a href="#inicio" class="volver">⬅ Volver al inicio</a>
+  <a href="#inicio" class="volver">⬅ Volver</a>
 </section>
 
 <!-- TRABAJOS -->
 <section id="trabajos">
-  <h1>Trabajos</h1>
-  <p>Algunos de nuestros proyectos:</p>
 
   <div class="galeria">
-    <!-- 🔥 CAMBIA ESTAS IMÁGENES POR LAS TUYAS -->
-    <img src="trabajo1.jpg" alt="trabajo">
-    <img src="trabajo2.jpg" alt="trabajo">
-    <img src="trabajo3.jpg" alt="trabajo">
+    <img src="trabajo1.jpg" class="img-responsive">
+    <img src="trabajo2.jpg" class="img-responsive">
+    <img src="trabajo3.jpg" class="img-responsive">
   </div>
 
-  <a href="#inicio" class="volver">⬅ Volver al inicio</a>
+  <a href="#inicio" class="volver">⬅ Volver</a>
 </section>
 
 </body>
