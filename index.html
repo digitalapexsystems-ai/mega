@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +24,7 @@ body {
   color: white;
 }
 
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -52,6 +55,7 @@ body {
   border-bottom: 2px solid #a855f7;
 }
 
+/* SECCIONES */
 section {
   min-height: 100vh;
   display: flex;
@@ -61,6 +65,7 @@ section {
   padding: 100px 20px;
 }
 
+/* INICIO */
 #inicio {
   background: linear-gradient(to bottom, #000, #4c3fa1);
   flex-direction: column;
@@ -81,6 +86,7 @@ section {
   font-weight: 800;
 }
 
+/* SOBRE */
 .sobre {
   position: relative;
   min-height: 100vh;
@@ -95,22 +101,26 @@ section {
   gap: 50px;
   position: relative;
   z-index: 2;
+  align-items: center; /* 🔥 mejora */
 }
 
 .sobre-texto-grande {
   width: 60%;
+  max-width: 700px;
 }
 
 .sobre-texto-grande h2 {
   font-size: clamp(28px, 3vw, 42px);
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
 }
 
 .sobre-texto-grande p {
-  margin-top: 30px;
+  margin-top: 25px;
   font-size: 16px;
   opacity: 0.8;
+  max-width: 600px;
 }
 
 .sobre-lateral {
@@ -130,6 +140,7 @@ section {
   font-weight: 600;
 }
 
+/* DECORACIÓN */
 .circulo {
   position: absolute;
   width: 500px;
@@ -154,28 +165,33 @@ section {
   filter: blur(80px);
 }
 
+/* PROYECTOS (COLLAGE) */
 .trabajos {
   min-height: 100vh;
   padding: 100px 8%;
-  background: black;
+  background: #140022;
   text-align: center;
-}
-
-.titulo-trabajos {
-  font-size: 32px;
-  margin-bottom: 50px;
 }
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  gap: 30px;
+}
+
+/* COLLAGE */
+.card:nth-child(1) {
+  grid-column: span 2;
+}
+
+.card:nth-child(3) {
+  grid-row: span 2;
 }
 
 .card {
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 25px;
   transition: 0.4s ease;
   position: relative;
   cursor: pointer;
@@ -186,22 +202,22 @@ section {
   height: 100%;
   object-fit: cover;
   transition: 0.4s ease;
-  border-radius: 20px;
 }
 
 .card:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(106, 0, 255, 0.4);
+  transform: scale(1.04);
+  z-index: 2;
 }
 
 .card:hover img {
   transform: scale(1.08);
 }
 
+/* COLORES */
 #sobre { background: #0f0f0f; }
-#proyectos { background: #140022; }
 #cotizar { background: #1a0033; }
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .sobre-container {
     flex-direction: column;
@@ -228,13 +244,17 @@ section {
   }
 
   .galeria {
-    gap: 25px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
   }
 
-  .titulo-trabajos {
-    font-size: 26px;
+  .card:nth-child(1),
+  .card:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
+
 </style>
 </head>
 
@@ -282,8 +302,6 @@ section {
 </section>
 
 <section id="proyectos" class="trabajos">
-
-  <h2 class="titulo-trabajos">Proyectos</h2>
 
   <div class="galeria">
     <div class="card">
