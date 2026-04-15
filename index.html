@@ -10,6 +10,93 @@
 
 <style>
 * {
+.sobre {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 8%;
+  background: black;
+  overflow: hidden;
+}
+
+.sobre-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.sobre-texto-grande {
+  width: 60%;
+}
+
+.sobre-texto-grande h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.sobre-texto-grande p {
+  margin-top: 30px;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.sobre-lateral {
+  width: 30%;
+  text-align: left;
+}
+
+.sobre-lateral p {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.sobre-lateral h1 {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.circulo {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #ff00cc, #6a00ff);
+  border-radius: 50%;
+  top: -100px;
+  left: 20%;
+  opacity: 0.4;
+  filter: blur(60px);
+}
+
+.curva {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #6a00ff, #00cfff);
+  border-radius: 50%;
+  bottom: -150px;
+  right: -150px;
+  opacity: 0.4;
+  filter: blur(80px);
+}
+
+@media (max-width: 900px) {
+  .sobre-container {
+    flex-direction: column;
+  }
+
+  .sobre-texto-grande,
+  .sobre-lateral {
+    width: 100%;
+  }
+
+  .sobre-lateral h1 {
+    text-align: center;
+  }
+}
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -113,14 +200,34 @@ section {
   <div class="titulo2">MEGA 3D</div>
 </section>
 
-<section id="sobre">
-  <div>
-    <h2>Sobre Nosotros</h2>
-    <p>
-      Diseñamos, fabricamos e instalamos letreros luminosos 3D,
-      fachadas de aluminio compuesto, neón flex y LED inteligente.
-    </p>
+<section id="sobre" class="sobre">
+  
+  <div class="sobre-container">
+
+    <div class="sobre-texto-grande">
+      <h2>
+        Nos especializamos en el diseño y fabricación de soluciones visuales que hacen destacar tu negocio, con una estética limpia que eleva la imagen de tu marca.
+      </h2>
+
+      <p>
+        Integramos tecnología con creatividad a través de letreros en LED inteligente, permitiéndote comunicar mensajes dinámicos, atractivos y personalizados.
+      </p>
+    </div>
+
+    <div class="sobre-lateral">
+      <p>
+        Ofrecemos letreros luminosos en 2D y 3D, ideales para brindar presencia, elegancia e impacto visual tanto de día como de noche.  
+        Además, desarrollamos fachadas en panel de aluminio compuesto, combinando durabilidad, modernidad y una estética limpia que eleva la imagen de tu marca.
+      </p>
+
+      <h1>MEGA 3D</h1>
+    </div>
+
   </div>
+
+  <div class="circulo"></div>
+  <div class="curva"></div>
+
 </section>
 
 <section id="proyectos">
