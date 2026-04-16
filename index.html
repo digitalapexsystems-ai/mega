@@ -84,15 +84,16 @@ section {
 
 .sobre-container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 60px;
+  justify-content: flex-start;
+  gap: 80px; /* 🔥 más aire entre bloques */
   position: relative;
   z-index: 2;
   text-align: center;
 }
 
+/* TEXTO PRINCIPAL */
 .sobre-texto-grande {
   width: 100%;
   max-width: 900px;
@@ -114,20 +115,28 @@ section {
   margin-right: auto;
 }
 
+/* 🔥 BLOQUE INFERIOR BIEN ESTRUCTURADO */
 .sobre-lateral {
   width: 100%;
-  max-width: 400px;
-  text-align: left; 
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 👈 clave: ya no centrado */
+  gap: 20px;
+
+  text-align: left;
 }
 
 .sobre-lateral p {
+  max-width: 420px; /* 🔥 evita que se expanda mucho */
   font-size: 15px;
   line-height: 1.7;
   opacity: 0.8;
 }
 
 .sobre-lateral h1 {
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 42px;
   font-weight: 600;
 }
