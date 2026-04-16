@@ -10,7 +10,6 @@
 
 <style>
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +23,6 @@ body {
   color: white;
 }
 
-/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -55,7 +53,6 @@ body {
   border-bottom: 2px solid #a855f7;
 }
 
-/* SECCIONES */
 section {
   min-height: 100vh;
   display: flex;
@@ -65,7 +62,6 @@ section {
   padding: 100px 20px;
 }
 
-/* INICIO */
 #inicio {
   background: linear-gradient(to bottom, #000, #4c3fa1);
   flex-direction: column;
@@ -86,61 +82,56 @@ section {
   font-weight: 800;
 }
 
-/* SOBRE */
-.sobre {
-  position: relative;
-  min-height: 100vh;
-  padding: 120px 8%;
-  background: black;
-  overflow: hidden;
-}
-
 .sobre-container {
   display: flex;
-  justify-content: space-between;
-  gap: 50px;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
   position: relative;
   z-index: 2;
-  align-items: center; /* 🔥 mejora */
+  text-align: center;
 }
 
 .sobre-texto-grande {
-  width: 60%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 900px;
 }
 
 .sobre-texto-grande h2 {
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(32px, 4vw, 48px);
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: 0.5px;
 }
 
 .sobre-texto-grande p {
-  margin-top: 25px;
+  margin-top: 30px;
   font-size: 16px;
   opacity: 0.8;
-  max-width: 600px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sobre-lateral {
-  width: 30%;
-  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  text-align: left; 
 }
 
 .sobre-lateral p {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
   opacity: 0.8;
 }
 
 .sobre-lateral h1 {
-  margin-top: 40px;
-  font-size: 40px;
+  margin-top: 30px;
+  font-size: 42px;
   font-weight: 600;
 }
-
-/* DECORACIÓN */
+  
 .circulo {
   position: absolute;
   width: 500px;
@@ -165,7 +156,6 @@ section {
   filter: blur(80px);
 }
 
-/* PROYECTOS (COLLAGE) */
 .trabajos {
   min-height: 100vh;
   padding: 100px 8%;
@@ -180,7 +170,6 @@ section {
   gap: 30px;
 }
 
-/* COLLAGE */
 .card:nth-child(1) {
   grid-column: span 2;
 }
@@ -213,11 +202,9 @@ section {
   transform: scale(1.08);
 }
 
-/* COLORES */
 #sobre { background: #0f0f0f; }
 #cotizar { background: #1a0033; }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .sobre-container {
     flex-direction: column;
